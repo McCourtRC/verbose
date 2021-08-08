@@ -83,7 +83,7 @@ const tokenize = (input) => {
     }
 
     // starts with number
-    const NUMBER = /^\d$/;
+    const NUMBER = /^\d|-$/;
     if (NUMBER.test(char)) {
       // build number
       let value = '';
