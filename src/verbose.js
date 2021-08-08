@@ -200,27 +200,6 @@ const parse = (tokens) => {
   return ast;
 };
 
-// {
-//   type: 'IDENTIFIER',
-//   name: 'foo',
-//   body: [
-//     {type: 'LITERAL', value: 123}
-//   ]
-// }
-
-// EXPECTED
-// const ast = {
-//   type: 'PROGRAM',
-//   body: [
-//     {
-//       IDENTIFIER: {
-//         name: 'foo'
-//         values: ['ASSIGNMENT', 'LITERAL'],
-//       },
-//     },
-//   ],
-// };
-
 const transpile = (node) => {
   switch (node.type) {
     // generate code for each node in 'body' and join with newline
