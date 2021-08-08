@@ -1,1 +1,1 @@
-log 123 456 "seven"
+foo is 123

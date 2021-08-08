@@ -139,18 +139,30 @@ const parse = (tokens) => {
         const node = {
           type: 'IDENTIFIER',
           name: token.value,
-          body: [],
+          assignment: [],
         };
+        // go to next token
         current++;
 
-        // TMP skip assignment
+        // build assignment
+        if (tokens[current].type === 'ASSIGNMENT') {
+          node.assignment = walk();
+        }
+
+        return node;
+      }
+      case 'ASSIGNMENT': {
+        // skip assignment
         current++;
+
+        // build array
+        const assignment = [];
 
         // walk to end of statement
         while (current < tokens.length) {
-          node.body.push(walk());
+          assignment.push(walk());
         }
-        return node;
+        return assignment;
       }
       case 'CALL': {
         const node = {
@@ -165,7 +177,6 @@ const parse = (tokens) => {
         }
         return node;
       }
-      case 'ASSIGNMENT':
       case 'LITERAL': {
         // go to next token
         current++;
@@ -217,8 +228,10 @@ const transpile = (node) => {
       return node.body.map(transpile).join('\n');
     case 'IDENTIFIER': {
       // IDENTIFIER has an expression in the body
-      if (node.body.length) {
-        return `const ${node.name} = ${node.body.map(transpile).join(' ')};`;
+      if (node.assignment.length) {
+        return `const ${node.name} = ${node.assignment
+          .map(transpile)
+          .join(' ')};`;
       }
 
       // IDENTIFIER is just a variable name
