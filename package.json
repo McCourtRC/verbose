@@ -1,0 +1,19 @@
+{
+  "name": "codegen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "compile": "node src/verbose.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "code-red": "^0.2.2",
+    "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+    "prettier": "2.3.2"
+  }
+}

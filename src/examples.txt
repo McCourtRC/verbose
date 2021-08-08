@@ -1,0 +1,66 @@
+firstName
+lastName
+
+strings =
+  split('\n')
+  map(trim)
+
+split with
+  newline then
+  map with
+
+split   with \n   then
+  map     with trim then
+  reverse
+split   with \n then
+  trim    each    then
+  reverse
+
+// ASSIGNMENT
+newline is "\n"
+
+poop is 2 * (3 - 4)
+
+// FUNCTION DEFINITION
+process is
+  split with newline then
+  trim and capitalize each then
+  reverse
+
+define process as
+  split with newline then
+  trim and capitalize each then
+  reverse
+  
+// FUNCTION CALL
+result is 
+  process with "string to process"
+
+result is
+  run process with "string to process"
+
+// LOG
+log result
+
+// IF STATEMENT
+name is 'name'
+  if a equals 7 else
+name is 'NAME'
+  if a equals 10 else
+name is 'NaMe'
+
+if a equals 7 then
+  name is 'name'
+else if a equals 10 then
+  name is 'NAME'
+else
+  name is 'NaMe'
+
+// FOR LOOP
+modify with val and index is
+  res is val + index
+  send res
+
+log modify with 'tomato' and 'potato'
+
+modify each item
