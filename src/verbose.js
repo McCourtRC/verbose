@@ -37,7 +37,7 @@ const tokenize = (input) => {
       // build string
       let value = '';
 
-      while (!SINGLE_QUOTE.test(char)) {
+      while (!SINGLE_QUOTE.test(char) && current < input.length) {
         // add escaped characters
         const ESCAPE_CHAR = /^\\$/;
         if (ESCAPE_CHAR.test(char)) {
@@ -63,7 +63,7 @@ const tokenize = (input) => {
       // build string
       let value = '';
 
-      while (!DOUBLE_QUOTES.test(char)) {
+      while (!DOUBLE_QUOTES.test(char) && current < input.length) {
         // add escaped characters
         const ESCAPE_CHAR = /^\\$/;
         if (ESCAPE_CHAR.test(char)) {
