@@ -88,7 +88,8 @@ const tokenize = (input) => {
       // build number
       let value = '';
 
-      while (NUMBER.test(char)) {
+      const DECIMAL = /\./;
+      while (NUMBER.test(char) || DECIMAL.test(char)) {
         value += char;
         char = input[++current];
       }
