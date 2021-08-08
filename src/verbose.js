@@ -152,6 +152,19 @@ const parse = (tokens) => {
         }
         return node;
       }
+      case 'CALL': {
+        const node = {
+          type: 'CALL',
+          name: token.value,
+          args: [],
+        };
+        current++;
+
+        while (current < tokens.length) {
+          node.args.push(walk());
+        }
+        return node;
+      }
       case 'ASSIGNMENT':
       case 'LITERAL': {
         // go to next token
@@ -211,6 +224,8 @@ const transpile = (node) => {
       // IDENTIFIER is just a variable name
       return node.name;
     }
+    case 'CALL':
+      return `${node.name}(${node.args.map(transpile).join(', ')});`;
     case 'LITERAL':
       // toString will add quotes around a string
       return toString(node.value);

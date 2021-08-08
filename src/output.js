@@ -1,1 +1,1 @@
-const foo = 123;
+console.log(123, 456, "seven");
