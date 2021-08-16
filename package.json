@@ -5,12 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "compile": "node src/verbose.js"
+    "compile": "node src/verbose.js",
+    "nearley": "npm run nearley:build && npm run nearley:run",
+    "nearley:build": "nearleyc nearley/grammar.ne -o nearley/grammar.js",
+    "nearley:run": "node nearley/nearley.js",
+    "nearley:visualize": "nearley-railroad nearley/grammar.ne -o nearley/grammar.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "code-red": "^0.2.2",
+    "moo": "^0.5.1",
+    "moo-indentation-lexer": "^6.0.0",
+    "nearley": "^2.20.1",
     "ramda": "^0.27.1"
   },
   "devDependencies": {

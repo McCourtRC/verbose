@@ -1,0 +1,1 @@
+const zed = ['item1', 'item2', { abc: 123 }, 'item3'];
