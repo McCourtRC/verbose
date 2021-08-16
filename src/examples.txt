@@ -10,11 +10,63 @@ split with
   map with
 
 split   with \n   then
-  map     with trim then
+  map   with trim then
   reverse
 split   with \n then
   trim    each    then
   reverse
+
+process is
+  split then
+  join with '\n' then
+  reverse
+
+process is
+| split
+| join with '\n'
+
+// IMPORT
+axios is from 'axios'
+
+DefaultImport was * from 'axios'
+
+- myPipe was pipe
+- path
+- pick is from 'ramda'
+
+React
+- useState
+- useEffect is from 'react'
+
+React
+- useState
+- useEffect 
+  is from 'react'
+
+React
+: useState
+: useEffect
+  is from 'react'
+
+React
+. useState
+. useEffect
+  is from 'react'
+
+React
+# useState
+# useEffect
+  is from 'react'
+
+React
+; useState
+; useEffect
+  is from 'react'
+
+React
+  useState
+  useEffect
+  is from 'react'
 
 // ASSIGNMENT
 newline is "\n"
@@ -23,6 +75,11 @@ poop is 2 * (3 - 4)
 
 // FUNCTION DEFINITION
 process is
+  split with newline then
+  trim and capitalize each then
+  reverse
+
+process is when
   split with newline then
   trim and capitalize each then
   reverse
@@ -64,3 +121,101 @@ modify with val and index is
 log modify with 'tomato' and 'potato'
 
 modify each item
+
+// ARRAY
+- item1
+- "item2"
+- 3
+
+arr is
+  - item1
+  - "item2"
+  - 3
+
+arr is
+  - 'outer'
+    - 'inner'
+  - 'outer2'
+
+// destructure
+// const [a, b, c] = array;
+- a
+- b
+- c
+  is array
+
+
+// OBJECT
+// const object = { person: { name: 'Bob', age: 21, pets: ['roger', 'dillon']}}
+person is
+  name: 'Bob'
+  age: 27
+  pets:
+    - 'roger'
+    - 'dillon'
+
+// destructure
+// const { person } = object;
+: person is object
+
+// const { person: { name, age } } = object;
+: person
+  : name
+  : age
+  is object
+
+
+
+
+
+// GOAL
+
+1. Build React components faster
+
+React
+: useState
+: useEffect
+  is from 'react'
+
+Component with props is
+  : name
+  : number
+    is from props
+  
+  nested is
+    <p>nested</p>
+  
+  <p>{name}: {number}</p>
+
+// const CONTENT_STATUS = { MOVIE: 'MOVIE', SERIES: 'SERIES'}
+
+CONTENT_STATUS is
+  MOVIE: 'MOVIE'
+  SERIES: 'SERIES'
+
+// When
+foo is 1 when bar equals 7
+    is 7 when bar equals 9
+
+when bar equals 7
+  foo is 1
+when bar equals 9
+  foo is 7
+
+// Switch vs Object
+switch(val) {
+  case 'a':
+    action
+    break;
+  case 'b':
+    action2
+    break;
+  default:
+    action3
+}
+
+const switch = {
+  'a': action,
+  'b': action2,
+  'default':
+}
